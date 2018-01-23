@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::any('/login', 'Login@index');
+Route::any('/regist', 'Login@regist');
+Route::any('/', 'Login@index');
+Route::any('/logout', 'Login@logout');
 Route::any('serlize', 'Serlize@index');
+//Route::any('login', 'Login@index');
+Route::get('/1', 'Login@in111');
+
