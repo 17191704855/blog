@@ -16,20 +16,5 @@
 </body>
 </html>
 <script>
-var vm = new Vue({
-	el:'#ww',
-data: {
-	msg:'111',
-  isActive: true,
-  error: null
-},
-computed: {
-  classObject: function () {
-    return {
-      active: this.isActive && !this.error,
-      'text-danger': this.error && this.error.type === 'fatal'
-    }
-  }
-}
-})
+
 </script>

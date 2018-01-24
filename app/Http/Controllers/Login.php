@@ -22,7 +22,7 @@ class Login extends Controller
 			}
 			Session::put('userid',$users['id']);
 			Session::put('login_name',$users['login_name']);
-			return redirect('/main');
+			return redirect('/article/lists');
 		}
 		return view('login');
    } 

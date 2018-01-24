@@ -11,11 +11,11 @@
 |
 */
 
+Route::any('article/{action}',function(\blog\Http\Controllers\Article $index, $action,\Illuminate\Http\Request $request ){
+		return $index->$action($request);
+    });
 Route::any('/login', 'Login@index');
 Route::any('/regist', 'Login@regist');
 Route::any('/', 'Login@index');
 Route::any('/logout', 'Login@logout');
-Route::any('serlize', 'Serlize@index');
-//Route::any('login', 'Login@index');
-Route::get('/1', 'Login@in111');
 
