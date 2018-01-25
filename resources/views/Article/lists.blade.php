@@ -6,6 +6,7 @@
         <title>论坛主页</title>
     </head>
 <body>
+<?php echo $errors->first('id'); ?>
 	<ul >
 		<li><a href='/article/publish'>发表帖子</a></li>
 		<li><a href='/article/management'>我的帖子</a></li>

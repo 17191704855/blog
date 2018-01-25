@@ -4,7 +4,9 @@ namespace blog\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 use blog\Models\Article as ATC;
+use blog\Models\Comment as CMT;
 class Article extends Controller
 {
 	//论坛主页
@@ -24,8 +26,15 @@ class Article extends Controller
 		$where=[];
 		if($request->id){
 			$result=ATC::getArticleById($request->id);
+			$comment=CMT::getCommentById($request->id);
+			foreach($comment as $k=>$v){
+				//dd(CMT::getSecondCommentById($request->id,$v->id)[0]->id);
+				$comment[$k]->secondcomment=CMT::getSecondCommentById($request->id,$v->id);
+			}
 			return view('Article/detail',[
 			'result'=>$result,
+			'comment'=>$comment,
+			'id'=>$request->id,
 		]);
 		}else{
 			return '未选择文章!';
