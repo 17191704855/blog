@@ -8,10 +8,10 @@
 <body>
 	<form action='' method='post'>
 		<input type="hidden" name="_token" value="{{ csrf_token() }}">
-		用户:<input type='text' name='username' value=''>
-		密码:<input type='password' name='pwd' value=''>
-		<input type='submit' value='提交'>
-		<a href='/regist'>注册</a>
+		<div>用户:<input type='text' name='username' value=''></div>
+		<div>密码:<input type='password' name='pwd' value=''></div>
+		<div><input type='submit' value='提交'>
+		<a href='/regist'>注册</a></div>
 	</form>
 </body>
 </html>

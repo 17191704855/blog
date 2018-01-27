@@ -29,6 +29,16 @@ class Login extends Controller
    //注册
    public function regist(Request $request){
 		if($request->isMethod('POST')){
+			if($request->pwd!=$request->repwd){
+				return '密码不一致！';
+			}
+			  $this->validate($request, [
+				'login_name' => 'required|unique:sys_user,login_name|max:12|min:6',
+				'pwd' => 'required',
+				'name' => 'required|unique:sys_user,name|max:5',
+				'email' => 'required|email_address|unique:sys_user,email',
+				'phone' => 'required',
+			]);
 			SysUser::addUser($request);
 			return redirect('/');
 		}
