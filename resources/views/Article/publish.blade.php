@@ -1,11 +1,5 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-		<script src="{{ asset('js/vue.js') }}"></script>
-        <title>论坛主页</title>
-    </head>
-<body>
+@extends('layouts.layout')
+@section('content')
 		<div>
 			<form action='' method='post'>
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -20,8 +14,7 @@
 				<div><input type='submit' value='发表'></div>
 			</form>
 		</div>
-</body>
-</html>
 <script>
 
 </script>
+@stop

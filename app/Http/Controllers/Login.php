@@ -13,7 +13,7 @@ class Login extends Controller
 			$password = md5($request->pwd);
 			$users = SysUser::where(['login_name'=>$request->username,'password'=>$password])->first();
 			if(!$users){
-				$error='用户不存在！';
+				$error='用户不存在或密码错误！';
 				return view('login',['error'=>$error]);
 			}
 			if($users['login_flag']==0){

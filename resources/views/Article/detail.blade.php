@@ -1,12 +1,5 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-		<script src="{{ asset('js/vue.js') }}"></script>
-		<script  src="https://cdn.bootcss.com/axios/0.16.0/axios.min.js"></script>
-        <title>论坛主页</title>
-    </head>
-<body>
+@extends('layouts.layout')
+@section('content')
 		<div>
 			<h1>{{$result->title}}</h1>
 			<span>{{$result->name}}</span>
@@ -42,8 +35,6 @@
 			<textarea name='comment'></textarea>
 			<input type='submit' value='评论'>
 		</div>
-</body>
-</html>
 <script>
 window.onload=function(){
 		new Vue({
@@ -83,3 +74,4 @@ window.onload=function(){
 		});
 	}
 </script>
+@stop
